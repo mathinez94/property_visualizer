@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="p-6 mx-auto w-full app">
-      <h1 className="bg-gray-600 text-white text-4xl p-6 mb-8 flex items-center justify-center font-bold w-full">
+      <h1 className="bg-gray-600 text-white text-xl p-6 mb-8 flex items-center justify-center font-bold w-full sm:text-4xl">
         <span className='border p-2 mr-3'>propertyVisualizer</span>  Tower Explorer
       </h1>
       {!selectedTower && (
@@ -64,7 +64,7 @@ function App() {
             {towers.map((tower) => (
               <div
                 key={tower.id}
-                className="border-2 rounded-lg p-16 cursor-pointer hover:bg-gray-200 text-center "
+                className="border-2 rounded-lg p-8 cursor-pointer hover:bg-gray-200 text-center sm:p-16"
                 onClick={() => handleSelectTower(tower)}
               >
                 <div className="text-xl font-bold">{tower.name}</div>
@@ -86,11 +86,11 @@ function App() {
           <h2 className="text-lg sm:text-3xl font-bold mb-2 p-2 rounded-lg bg-gray-700 text-white">
             {selectedTower.name}: Select a Floor
           </h2>
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-4">
             {floors.map((floor) => (
               <div
                 key={floor}
-                className="border-2 rounded p-8 cursor-pointer hover:bg-gray-100 text-center font-bold hover:cursor-pointer transition-transform transform hover:translate-x-1 hover:translate-y-1"
+                className="border-2 rounded p-4 sm:p-8 cursor-pointer hover:bg-gray-100 text-center font-bold hover:cursor-pointer transition-transform transform hover:translate-x-1 hover:translate-y-1"
                 onClick={() => handleSelectFloor(floor)}
               >
                 Floor {floor}
@@ -111,17 +111,17 @@ function App() {
           <h2 className="text-lg sm:text-3xl font-semibold mb-2 p-2 rounded-lg bg-gray-700 text-white">
             {selectedTower.name} - Floor {selectedFloor}: Select an Apartment
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {layouts.map((layout) => (
               <div
                 key={layout.id}
-                className="border-2 rounded p-2 cursor-pointer hover:bg-gray-100 flex justify-center items-center hover:cursor-pointer transition-transform transform hover:translate-x-1 hover:translate-y-1"
+                className="border-2 rounded sm:p-2 cursor-pointer hover:bg-gray-100 flex justify-center items-center hover:cursor-pointer transition-transform transform hover:translate-x-1 hover:translate-y-1"
                 onClick={() => handleSelectLayout(layout)}
               >
                 <img
                   src={getImageURL(layout.image)}
                   alt="Layout thumbnail"
-                  className="w-46 h-46 object-cover mr-3 rounded"
+                  className="w-24 h-24 object-cover mr-3 rounded sm:w-46 sm:h-46"
                 />
                 <div>
                   <div className="font-bold">{layout.unitType}</div>
