@@ -86,7 +86,7 @@ function App() {
           <h2 className="text-lg sm:text-3xl font-bold mb-2 p-2 rounded-lg bg-gray-700 text-white">
             {selectedTower.name}: Select a Floor
           </h2>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-6 gap-4">
             {floors.map((floor) => (
               <div
                 key={floor}
@@ -111,7 +111,7 @@ function App() {
           <h2 className="text-lg sm:text-3xl font-semibold mb-2 p-2 rounded-lg bg-gray-700 text-white">
             {selectedTower.name} - Floor {selectedFloor}: Select an Apartment
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             {layouts.map((layout) => (
               <div
                 key={layout.id}
